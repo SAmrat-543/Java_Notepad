@@ -11,33 +11,25 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 public class NotePad extends JFrame implements ActionListener {
-
-    /**
-	 * 
-	 */
+    
 	private static final long serialVersionUID = 1L;
 	private JTextArea textArea;
     private JMenuBar menuBar;
     private JMenu menu1,menu2,menu3;
     private JMenuItem newItem, openItem, saveItem, exitItem;
     public JFrame f,Lspace;
+
     public NotePad() {
     	
         f = new JFrame("NotePad Application");
        
-        
-        
-//        Lspace = new JFrame();
-//        Lspace.setSize(1,1);
-//        
-//        f.add(Lspace, BorderLayout.EAST);
         //create text area
         textArea = new JTextArea();
         textArea.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
-        
         f.add(new JScrollPane(textArea), BorderLayout.CENTER);
+        
         //create menu bar
         menuBar = new JMenuBar();
         f.setJMenuBar(menuBar);
@@ -48,18 +40,17 @@ public class NotePad extends JFrame implements ActionListener {
  
         menu2 = new JMenu(" Edit");
         menuBar.add(menu2);
-        
-        
+               
         menu3 = new JMenu(" Help");
         menuBar.add(menu3);
         
         
         //create menu items
         newItem = new JMenuItem(" New");
-//        menu.add(newItem, openItem);
         openItem = new JMenuItem(" Open"); 
         saveItem = new JMenuItem(" Save");
         exitItem = new JMenuItem(" Exit");
+        //add items to menu
         menu1.add(newItem);
         menu1.add(openItem);
         menu1.add(saveItem);
