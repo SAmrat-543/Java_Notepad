@@ -65,14 +65,29 @@ public class NotePad extends JFrame implements ActionListener {
         menu1.add(saveItem);
         menu1.add(exitItem);
         
+        exitItem.addActionListener(this);
+        newItem.addActionListener(this);
+
+        saveItem.addActionListener(this);
+        openItem.addActionListener(this);
+        
         f.setSize(800, 600);    
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         f.setVisible(true); 
         
     }
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-        
+        if(e.getSource() == exitItem)
+        {
+            System.exit(0);
+        }
+
+        if(e.getSource() == newItem)
+        {
+            new NotePad();
+        }
 //		public void addActionListener(ActionListener a){}
 //		
 	}	
